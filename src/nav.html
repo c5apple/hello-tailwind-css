@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TailwindCSS ナビゲーションバー</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- アイコン用のFont Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+  </script>
+</head>
+
+<body>
+  <nav class="bg-gray-800 text-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between">
+        <div class="flex items-center py-4">
+          <span class="font-bold text-xl">MyWebsite</span>
+        </div>
+
+        <!-- デスクトップメニュー -->
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="#" class="py-4 px-2 hover:text-blue-300">ホーム</a>
+          <a href="#" class="py-4 px-2 hover:text-blue-300">サービス</a>
+          <a href="#" class="py-4 px-2 hover:text-blue-300">プロジェクト</a>
+          <a href="#" class="py-4 px-2 hover:text-blue-300">お問い合わせ</a>
+        </div>
+
+        <!-- モバイルメニューボタン -->
+        <div class="md:hidden flex items-center">
+          <button onClick="toggleMenu()" class="focus:outline-none">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- モバイルメニュー -->
+    <div id="mobile-menu" class="md:hidden hidden">
+      <a href="#" class="block py-2 px-4 hover:bg-gray-700">ホーム</a>
+      <a href="#" class="block py-2 px-4 hover:bg-gray-700">サービス</a>
+      <a href="#" class="block py-2 px-4 hover:bg-gray-700">プロジェクト</a>
+      <a href="#" class="block py-2 px-4 hover:bg-gray-700">お問い合わせ</a>
+    </div>
+  </nav>
+
+  <div class="p-6">
+    <h1 class="text-2xl font-bold mb-4">TailwindCSSでナビゲーションバーを作る</h1>
+    <p>ブラウザの幅を変えて、レスポンシブデザインを確認してみましょう。</p>
+  </div>
+</body>
+
+</html>
